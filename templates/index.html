@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tune</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='bootstrap.css') }}"
+    />
+    <script src="{{ url_for('static',filename='main.js') }}"></script>
+  </head>
+
+  <body>
+    <div class="background">
+      <div class="container">
+        <div class="screen">
+          <!-- <div class="screen-header">
+            <div class="screen-header-left">
+              <div class="screen-header-button minimize"></div>
+              <div class="screen-header-button maximize"></div>
+              <div class="screen-header-button close"></div>
+            </div>
+          </div> -->
+          <div class="screen-body">
+            <div class="screen-body-item left">
+              <div class="app-title">
+                <center>
+                  <b style="font-size: 40px">Insurance Price Calculation</b>
+                </center>
+              </div>
+              <div class="">
+                <img
+                  class="w-75 logo-picture ml-5"
+                  style=""
+                  src="{{ url_for('static', filename='image.png') }}"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="screen-body-item">
+              <form
+                action="{{ url_for('predict')}}"
+                name="ml"
+                method="post"
+                onclick="return validateForm()"
+              >
+                <div class="app-form">
+                  <div class="app-form-group">
+                    <input
+                      class="app-form-control"
+                      type="text"
+                      name="Age"
+                      placeholder="Age of Person"
+                      required
+                    />
+                  </div>
+                  <div class="app-form-group">
+                   
+                    <label class="form-check-label" for="flexRadioDefault1">
+                     Gender
+                    </label>
+                  </div>
+                  <div class="app-form-group">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault1"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Male
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault2"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Female
+                      </label>
+                    </div>
+                  </div>
+                  <div class="app-form-group">
+                    <input
+                      class="app-form-control"
+                      type="text"
+                      name="bmi"
+                      placeholder="BMI"
+                      required
+                    />
+                  </div>
+                  <div class="app-form-group">
+                    <input
+                      class="app-form-control"
+                      type="text"
+                      name="childs"
+                      placeholder="No. of Childrens"
+                      required
+                    />
+                  </div>
+                  <div class="app-form-group">
+                   
+                    <label class="form-check-label" for="flexRadioDefault1">
+                     Smoker ??
+                    </label>
+                  </div>
+                  <div class="app-form-group">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault1"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Smoker
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault2"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Non - Smoker
+                      </label>
+                    </div>
+                  </div>
+<div class="app-form-group">
+                   
+                    <label class="form-check-label" for="flexRadioDefault1">
+                     Region
+                    </label>
+                  </div>                
+                  <div class="app-form-group">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      A
+                    </label>
+                  </div>
+                  <div class="app-form-group">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      B
+                    </label>
+                  </div>
+                  <div class="app-form-group">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      C
+                    </label>
+                  </div>
+                  <div class="app-form-group">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      D
+                    </label>
+                  </div>
+
+                  <div class="app-form-group buttons">
+                    <button type="reset" class="btn btn-danger m-3">
+                      Reset
+                    </button>
+                    <button type="submit" class="btn btn-primary m-3">
+                      Calculate
+                    </button>
+                  </div>
+
+                  <!-- Prediction data-->
+                  <div class="prediction_data">{{val}} Value</div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
