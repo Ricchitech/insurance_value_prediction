@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tune</title>
+    <title>Velocity</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -22,13 +22,6 @@
     <div class="background">
       <div class="container">
         <div class="screen">
-          <!-- <div class="screen-header">
-            <div class="screen-header-left">
-              <div class="screen-header-button minimize"></div>
-              <div class="screen-header-button maximize"></div>
-              <div class="screen-header-button close"></div>
-            </div>
-          </div> -->
           <div class="screen-body">
             <div class="screen-body-item left">
               <div class="app-title">
@@ -63,9 +56,8 @@
                     />
                   </div>
                   <div class="app-form-group">
-                   
-                    <label class="form-check-label" for="flexRadioDefault1">
-                     Gender
+                    <label class="form-check-label" for="">
+                      Gender
                     </label>
                   </div>
                   <div class="app-form-group">
@@ -73,8 +65,10 @@
                       <input
                         class="form-check-input"
                         type="radio"
-                        name="flexRadioDefault"
+                        name="gender"
                         id="flexRadioDefault1"
+                        required
+                        value="0"
                       />
                       <label class="form-check-label" for="flexRadioDefault1">
                         Male
@@ -84,8 +78,10 @@
                       <input
                         class="form-check-input"
                         type="radio"
-                        name="flexRadioDefault"
+                        name="gender"
                         id="flexRadioDefault2"
+                        required
+                        value="1"
                       />
                       <label class="form-check-label" for="flexRadioDefault2">
                         Female
@@ -105,15 +101,14 @@
                     <input
                       class="app-form-control"
                       type="text"
-                      name="childs"
+                      name="childrens"
                       placeholder="No. of Childrens"
                       required
                     />
                   </div>
                   <div class="app-form-group">
-                   
-                    <label class="form-check-label" for="flexRadioDefault1">
-                     Smoker ??
+                    <label class="form-check-label" for="">
+                      Smoker ??
                     </label>
                   </div>
                   <div class="app-form-group">
@@ -121,8 +116,9 @@
                       <input
                         class="form-check-input"
                         type="radio"
-                        name="flexRadioDefault"
+                        name="smoke"
                         id="flexRadioDefault1"
+                        value="0"
                       />
                       <label class="form-check-label" for="flexRadioDefault1">
                         Smoker
@@ -132,65 +128,70 @@
                       <input
                         class="form-check-input"
                         type="radio"
-                        name="flexRadioDefault"
+                        name="smoke"
                         id="flexRadioDefault2"
+                        value="1"
                       />
                       <label class="form-check-label" for="flexRadioDefault2">
                         Non - Smoker
                       </label>
                     </div>
                   </div>
-<div class="app-form-group">
-                   
-                    <label class="form-check-label" for="flexRadioDefault1">
-                     Region
+                 
+                    <div class="app-form-group">
+                    <label class="form-check-label" for="">
+                      Region
                     </label>
-                  </div>                
+                  </div>
+                  
                   <div class="app-form-group">
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="flexRadioDefault"
+                      name="reg"
                       id="flexRadioDefault1"
+                      value="0"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
-                      A
+                      southeast
                     </label>
                   </div>
                   <div class="app-form-group">
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="flexRadioDefault"
+                      name="reg"
                       id="flexRadioDefault1"
+                      value="1"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
-                      B
+                      southwest
                     </label>
                   </div>
                   <div class="app-form-group">
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="flexRadioDefault"
+                      name="reg"
                       id="flexRadioDefault1"
+                      value="2"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
-                      C
+                      northeast
                     </label>
                   </div>
                   <div class="app-form-group">
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="flexRadioDefault"
+                      name="reg"
                       id="flexRadioDefault1"
+                      value="3"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
-                      D
+                      northwest
                     </label>
                   </div>
-
                   <div class="app-form-group buttons">
                     <button type="reset" class="btn btn-danger m-3">
                       Reset
@@ -201,13 +202,16 @@
                   </div>
 
                   <!-- Prediction data-->
-                  <div class="prediction_data">{{val}} Value</div>
+                  <div class="prediction_data">{{val}}</div>
                 </div>
               </form>
             </div>
+           
           </div>
+           <footer class="footer">Velocity IT Solutions</footer>
         </div>
       </div>
+      
     </div>
   </body>
 </html>

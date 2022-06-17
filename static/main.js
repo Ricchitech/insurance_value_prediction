@@ -1,17 +1,18 @@
 function validateForm(){
-    let preg = document.forms["ml"]["Pregnancies"].value;
-    let gluc = document.forms["ml"]["Glucose"].value;
-    let bp = document.forms["ml"]["BloodPressure"].value;
-    let skin = document.forms["ml"]["SkinThickness"].value;
-    let insulin = document.forms["ml"]["Insulin"].value;
-    let bmi = document.forms["ml"]["BMI"].value;
-    let diab = document.forms["ml"]["DiabetesPedigreeFunction"].value;
-    let age = document.forms["ml"]["Age"].value;
+    let Age = document.forms["ml"]["Age"].value;
+    let bmi = document.forms["ml"]["bmi"].value;
+    let child = document.forms["ml"]["childrens"].value;
 
-    if (isNaN(preg) || isNaN(gluc) || isNaN(bp) || isNaN(skin) || isNaN(insulin) || isNaN(bmi) || isNaN(diab) || isNaN(age)) {
-        alert("Please Enter Valid Numeric value");
+    if (isNaN(Age) || Age<0 || Age>100)  {
+        alert("Please Enter Valid Age");
+        return false;
+    }
+    if (isNaN(bmi) || bmi<0 || bmi>40)  {
+        alert("Please Enter Valid BMI value");
+        return false;
+    }
+    if (isNaN(child) || child>3 || child<0)  {
+        alert("Please Enter Valid Childrens value");
         return false;
     }
 }
-
-// || isNaN(gluc) || isNaN(bp) || isNaN(skin) || isNaN(insulin) || isNaN(bmi) || isNaN(diab)|| isNaN(age) || preg < 0 || gluc < 0 || bp < 0 || skin < 0 || insulin < 0 || bmi < 0 || diab < 0 || age < 0

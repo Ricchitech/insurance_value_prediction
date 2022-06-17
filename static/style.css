@@ -22,6 +22,11 @@ body, button, input {
   opacity: 1;
 }
 
+.grid-container{
+  display: grid;
+  grid-template-columns: 1ft 1fr;
+}
+
 .background {
   display: flex;
   min-height: 100vh;
@@ -55,55 +60,9 @@ body, button, input {
   z-index: -1;
 }
 
-.screen-header {
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  background: #4d4d4f;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-.screen-header-left {
-  margin-right: auto;
-}
-
-.screen-header-button {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  margin-right: 3px;
-  border-radius: 8px;
-  background: white;
-}
-
-.screen-header-button.close {
-  background: #ed1c6f;
-}
-
-.screen-header-button.maximize {
-  background: #e8e925;
-}
-
-.screen-header-button.minimize {
-  background: #74c54f;
-}
-
-.screen-header-right {
-  display: flex;
-}
-
-.screen-header-ellipsis {
-  width: 3px;
-  height: 3px;
-  margin-left: 2px;
-  border-radius: 8px;
-  background: #999;
-}
-
 .screen-body {
   display: flex;
-  height:700px;
+  height:690px;
 }
 
 .screen-body-item {
@@ -218,18 +177,22 @@ body, button, input {
   text-decoration: none;
 }
 
-.dribbble {
-  width: 20px;
-  height: 20px;
-  margin: 0 5px;
-}
-
 .form-check-label{
   font-size: 14px;
   color: #fff;
   margin-left: 10px;
 }
 
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: 'poppins', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
 
 .form-check{
   margin-right: 10px;
